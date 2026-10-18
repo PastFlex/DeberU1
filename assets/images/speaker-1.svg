@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280" fill="none" role="img" aria-label="Retrato de Dra. Elena Rostova, investigadora en Deep Learning">
+  <rect width="280" height="280" rx="16" fill="#1e293b" />
+  <circle cx="140" cy="115" r="75" fill="#4f46e5" opacity="0.35" />
+  <path d="M50 260 C50 195 100 185 140 185 C180 185 230 195 230 260 Z" fill="#4338ca" />
+  <path d="M110 185 L140 230 L170 185 Z" fill="#ffffff" />
+  <rect x="128" y="145" width="24" height="25" rx="4" fill="#fed7aa" />
+  <ellipse cx="140" cy="120" rx="42" ry="48" fill="#fed7aa" />
+  <!-- Gafas y rostro -->
+  <circle cx="124" cy="118" r="12" stroke="#38bdf8" stroke-width="2.5" fill="none" />
+  <circle cx="156" cy="118" r="12" stroke="#38bdf8" stroke-width="2.5" fill="none" />
+  <line x1="136" y1="118" x2="144" y2="118" stroke="#38bdf8" stroke-width="2.5" />
+  <circle cx="124" cy="118" r="3" fill="#0f172a" />
+  <circle cx="156" cy="118" r="3" fill="#0f172a" />
+  <path d="M132 144 Q140 152 148 144" stroke="#c2410c" stroke-width="2" fill="none" stroke-linecap="round" />
+  <!-- Cabello -->
+  <path d="M98 115 C96 75 120 62 140 62 C160 62 184 75 182 115 C174 88 160 76 140 76 C120 76 106 88 98 115 Z" fill="#334155" />
+</svg>

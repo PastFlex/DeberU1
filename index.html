@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="I Congreso Internacional de Energías Renovables, Sostenibilidad y Transición Ecológica (CIER 2026). Evento académico con ponencias magistrales, talleres prácticos y certificación oficial.">
+  <meta name="keywords" content="congreso academico, energias renovables, sostenibilidad, transicion ecologica, energia solar, hidrogeno verde, movilidad electrica, economia circular, CIER 2026">
+  <meta name="author" content="Comité Académico CIER 2026">
+  <title>CIER 2026 | I Congreso Internacional de Energías Renovables y Tecnologías Sostenibles</title>
+  
+  <!-- Preconexión de fuentes y hoja de estilos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Enlace accesible de salto al contenido principal -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- Encabezado y Navegación Principal -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <div class="brand">
+        <a href="#inicio" class="brand-link" aria-label="Ir al inicio - CIER 2026">
+          <img src="assets/images/logo-ciate.svg" alt="Logotipo oficial de CIER 2026" class="brand-logo" width="44" height="44">
+          <span class="brand-text">CIER <span class="brand-year">2026</span></span>
+        </a>
+      </div>
+
+      <!-- Botón hamburguesa para dispositivos móviles -->
+      <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú principal de navegación">
+        <span class="menu-icon" aria-hidden="true"></span>
+      </button>
+
+      <!-- Barra de navegación funcional -->
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <ul class="nav-list" id="nav-list">
+          <li class="nav-item"><a href="#inicio" class="nav-link active">Inicio</a></li>
+          <li class="nav-item"><a href="#ejes" class="nav-link">Ejes Temáticos</a></li>
+          <li class="nav-item"><a href="#ponentes" class="nav-link">Ponentes</a></li>
+          <li class="nav-item"><a href="#cronograma" class="nav-link">Cronograma</a></li>
+          <li class="nav-item"><a href="#faq" class="nav-link">Preguntas</a></li>
+          <li class="nav-item"><a href="#registro" class="nav-btn btn btn-primary">Inscribirme</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenedor Principal Semántico -->
+  <main id="main-content">
+
+    <!-- Sección Hero / Inicio -->
+    <section class="hero-section" id="inicio" aria-labelledby="hero-title">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-dot" aria-hidden="true"></span>
+            <span>Evento Académico Internacional • Sostenibilidad y Transición Ecológica</span>
+          </div>
+
+          <!-- Único encabezado de nivel 1 -->
+          <h1 id="hero-title" class="hero-title">
+            I Congreso Internacional de <span class="gradient-text">Energías Renovables</span> y Tecnologías Sostenibles
+          </h1>
+
+          <p class="hero-description">
+            Un espacio científico y multidisciplinario de debate, investigación y transferencia tecnológica donde especialistas, docentes y estudiantes impulsan la descarbonización y el futuro energético global.
+          </p>
+
+          <div class="hero-details" aria-label="Información clave del evento">
+            <div class="detail-item">
+              <span class="detail-icon" aria-hidden="true">📅</span>
+              <div>
+                <strong>18 al 20 de Noviembre, 2026</strong>
+                <p>3 jornadas académicas intensivas</p>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon" aria-hidden="true">📍</span>
+              <div>
+                <strong>Campus Central &amp; Streaming HD</strong>
+                <p>Modalidad presencial y virtual</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#registro" class="btn btn-primary btn-lg">Asegurar mi Asistencia</a>
+            <a href="#cronograma" class="btn btn-secondary btn-lg">Explorar Programa</a>
+          </div>
+
+          <div class="hero-metrics" role="region" aria-label="Estadísticas del congreso">
+            <div class="metric-card">
+              <span class="metric-number">+1,200</span>
+              <span class="metric-label">Asistentes previstos</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-number">16</span>
+              <span class="metric-label">Conferencias magistrales</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-number">40h</span>
+              <span class="metric-label">Certificación oficial</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <figure class="hero-figure">
+            <img src="assets/images/hero-illustration.svg" alt="Diagrama de red energética sostenible que interconecta áreas de energía solar, hidrógeno verde, redes inteligentes y economía circular" class="hero-image" width="600" height="420" loading="eager">
+            <figcaption class="hero-caption">Ecosistema de transición ecológica y desarrollo energético sostenible CIER 2026.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección 1: Ejes Temáticos -->
+    <section class="section tracks-section" id="ejes" aria-labelledby="tracks-heading">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-sub">Áreas de Investigación</span>
+          <h2 id="tracks-heading" class="section-title">Ejes Temáticos del Congreso</h2>
+          <p class="section-description">
+            Ponencias y mesas de debate diseñadas para abordar los desafíos más urgentes de la descarbonización, la eficiencia energética y la sostenibilidad ambiental.
+          </p>
+        </header>
+
+        <div class="tracks-grid">
+          <!-- Eje 1 -->
+          <article class="track-card">
+            <div class="track-icon-wrapper" aria-hidden="true">
+              <span class="track-icon">☀️</span>
+            </div>
+            <h3 class="track-title">Energía Solar Fotovoltaica y Eólica Avanzada</h3>
+            <p class="track-text">
+              Nuevos materiales semiconductores, células tándem de silicio y perovskita, parques eólicos marinos (offshore) y modelado de microrredes para generación distribuida.
+            </p>
+            <ul class="track-topics" aria-label="Tópicos de Energía Solar y Eólica">
+              <li>Células solares de perovskita de alta eficiencia</li>
+              <li>Generación eólica offshore y sistemas flotantes</li>
+              <li>Optimización y simulación de parques solares</li>
+            </ul>
+          </article>
+
+          <!-- Eje 2 -->
+          <article class="track-card">
+            <div class="track-icon-wrapper" aria-hidden="true">
+              <span class="track-icon">⚡</span>
+            </div>
+            <h3 class="track-title">Hidrógeno Verde y Almacenamiento Energético</h3>
+            <p class="track-text">
+              Electrólisis de membrana de intercambio protónico (PEM), pilas de combustible estacionarias, portadores orgánicos líquidos (LOHC) y baterías de flujo redox.
+            </p>
+            <ul class="track-topics" aria-label="Tópicos de Hidrógeno y Almacenamiento">
+              <li>Electrólisis de alta presión y bajo coste</li>
+              <li>Sistemas de compresión y transporte seguro de H2</li>
+              <li>Baterías de ion-litio de estado sólido y flujo redox</li>
+            </ul>
+          </article>
+
+          <!-- Eje 3 -->
+          <article class="track-card">
+            <div class="track-icon-wrapper" aria-hidden="true">
+              <span class="track-icon">🔌</span>
+            </div>
+            <h3 class="track-title">Ciudades Inteligentes y Movilidad Eléctrica</h3>
+            <p class="track-text">
+              Redes eléctricas inteligentes (Smart Grids), integración bidireccional vehículo-red (V2G), electrificación del transporte público y arquitectura bioclimática urbana.
+            </p>
+            <ul class="track-topics" aria-label="Tópicos de Movilidad y Redes">
+              <li>Smart Grids y gestión de balance de carga</li>
+              <li>Tecnología de carga ultrarrápida e interoperabilidad</li>
+              <li>Descarbonización del transporte metropolitano</li>
+            </ul>
+          </article>
+
+          <!-- Eje 4 -->
+          <article class="track-card">
+            <div class="track-icon-wrapper" aria-hidden="true">
+              <span class="track-icon">🌱</span>
+            </div>
+            <h3 class="track-title">Economía Circular y Gestión de Recursos</h3>
+            <p class="track-text">
+              Reciclaje y recuperación de minerales críticos para baterías, valorización energética de biomasa, tratamiento de aguas y diseño de políticas de neutralidad climática.
+            </p>
+            <ul class="track-topics" aria-label="Tópicos de Economía Circular">
+              <li>Recuperación de litio, cobalto y níquel</li>
+              <li>Biogás y bioenergía a partir de residuos orgánicos</li>
+              <li>Taxonomía verde y políticas públicas sostenibles</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección 2: Ponentes Magistrales con Filtro Interactivo -->
+    <section class="section speakers-section" id="ponentes" aria-labelledby="speakers-heading">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-sub">Voces Líderes</span>
+          <h2 id="speakers-heading" class="section-title">Ponentes Magistrales y Especialistas</h2>
+          <p class="section-description">
+            Científicos, directores de laboratorios y especialistas internacionales compartirán sus investigaciones y casos de estudio reales en transición energética.
+          </p>
+        </header>
+
+        <!-- Interacción JS 1: Controles de Filtro Accesible -->
+        <div class="filter-wrapper" role="group" aria-label="Filtrar conferencistas por área de especialidad">
+          <span class="filter-label" id="filter-label-text">Filtrar por área:</span>
+          <div class="filter-buttons" role="tablist" aria-labelledby="filter-label-text">
+            <button type="button" class="filter-btn active" data-category="todos" aria-pressed="true">
+              Todos los Ponentes (4)
+            </button>
+            <button type="button" class="filter-btn" data-category="solar" aria-pressed="false">
+              Energía Solar y Eólica
+            </button>
+            <button type="button" class="filter-btn" data-category="hidrogeno" aria-pressed="false">
+              Hidrógeno y Almacenamiento
+            </button>
+            <button type="button" class="filter-btn" data-category="movilidad" aria-pressed="false">
+              Movilidad Eléctrica
+            </button>
+            <button type="button" class="filter-btn" data-category="circular" aria-pressed="false">
+              Economía Circular
+            </button>
+          </div>
+        </div>
+
+        <!-- Región accesible aria-live para anunciar cambios a lectores de pantalla -->
+        <div id="filter-announcer" class="sr-only" role="status" aria-live="polite">
+          Mostrando 4 conferencistas.
+        </div>
+
+        <!-- Grid de Tarjetas de Ponentes -->
+        <div class="speakers-grid" id="speakers-grid">
+
+          <!-- Ponente 1 -->
+          <article class="speaker-card" data-category="solar">
+            <figure class="speaker-figure">
+              <img src="assets/images/speaker-1.svg" alt="Retrato fotográfico de la Dra. Elena Morales con gafas y fondo púrpura institucional" class="speaker-photo" width="280" height="280" loading="lazy">
+              <span class="speaker-badge badge-solar">Energía Solar</span>
+            </figure>
+            <div class="speaker-info">
+              <h3 class="speaker-name">Dra. Elena Morales</h3>
+              <p class="speaker-institution">Instituto de Energía Solar y Fotovoltaica de Friburgo</p>
+              <h4 class="speaker-topic">Ponencia: <em>"Avances en Células Solares Tándem de Perovskita y Alta Eficiencia"</em></h4>
+              <p class="speaker-bio">
+                Doctora en Ingeniería Energética con más de 14 años liderando investigaciones sobre nuevos materiales fotovoltaicos y descarbonización energética.
+              </p>
+            </div>
+          </article>
+
+          <!-- Ponente 2 -->
+          <article class="speaker-card" data-category="hidrogeno">
+            <figure class="speaker-figure">
+              <img src="assets/images/speaker-2.svg" alt="Retrato del Dr. Marcos Chen con vestimenta profesional azul y fondo celeste" class="speaker-photo" width="280" height="280" loading="lazy">
+              <span class="speaker-badge badge-hidrogeno">Hidrógeno Verde</span>
+            </figure>
+            <div class="speaker-info">
+              <h3 class="speaker-name">Dr. Marcos Chen</h3>
+              <p class="speaker-institution">Laboratorio de Tecnologías de Hidrógeno y Celdas de Combustible de Kioto</p>
+              <h4 class="speaker-topic">Ponencia: <em>"Producción Escalable de Hidrógeno Verde Mediante Electrólisis PEM"</em></h4>
+              <p class="speaker-bio">
+                Investigador principal en sistemas electroquímicos de alta eficiencia y consultor internacional en almacenamiento masivo de vectores energéticos limpios.
+              </p>
+            </div>
+          </article>
+
+          <!-- Ponente 3 -->
+          <article class="speaker-card" data-category="movilidad">
+            <figure class="speaker-figure">
+              <img src="assets/images/speaker-3.svg" alt="Retrato de la Dra. Valeria Duarte con vestimenta esmeralda institucional" class="speaker-photo" width="280" height="280" loading="lazy">
+              <span class="speaker-badge badge-movilidad">Movilidad Eléctrica</span>
+            </figure>
+            <div class="speaker-info">
+              <h3 class="speaker-name">Dra. Valeria Duarte</h3>
+              <p class="speaker-institution">Centro Europeo de Investigación en Movilidad Sostenible</p>
+              <h4 class="speaker-topic">Ponencia: <em>"Integración de Flotas Eléctricas en Redes Inteligentes (Smart Grids y V2G)"</em></h4>
+              <p class="speaker-bio">
+                Asesora de comités de normalización en infraestructura de recarga ultrarrápida y estabilidad de redes de distribución bajo alta penetración renovable.
+              </p>
+            </div>
+          </article>
+
+          <!-- Ponente 4 -->
+          <article class="speaker-card" data-category="circular">
+            <figure class="speaker-figure">
+              <img src="assets/images/speaker-4.svg" alt="Retrato del M.Sc. Carlos Mendoza con indumentaria formal y fondo ámbar" class="speaker-photo" width="280" height="280" loading="lazy">
+              <span class="speaker-badge badge-circular">Economía Circular</span>
+            </figure>
+            <div class="speaker-info">
+              <h3 class="speaker-name">M.Sc. Carlos Mendoza</h3>
+              <p class="speaker-institution">Observatorio Internacional de Políticas Ambientales y Economía Circular</p>
+              <h4 class="speaker-topic">Ponencia: <em>"Estrategias de Economía Circular y Ciclo de Vida en Baterías de Transición"</em></h4>
+              <p class="speaker-bio">
+                Especialista en análisis de ciclo de vida (LCA), métricas de descarbonización industrial y marcos regulatorios de neutralidad climática internacional.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección 3: Cronograma de Actividades -->
+    <section class="section schedule-section" id="cronograma" aria-labelledby="schedule-heading">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-sub">Agenda Académica</span>
+          <h2 id="schedule-heading" class="section-title">Programa del Congreso</h2>
+          <p class="section-description">
+            Tres días planificados con rigor académico: conferencias matutinas, mesas redondas vespertinas y talleres prácticos en laboratorios.
+          </p>
+        </header>
+
+        <div class="schedule-timeline">
+          <!-- Día 1 -->
+          <div class="schedule-day-block">
+            <div class="day-header">
+              <span class="day-badge">Día 1</span>
+              <h3 class="day-title">Miércoles 18 de Noviembre: Transición Energética y Nuevos Materiales Fotovoltaicos</h3>
+            </div>
+            <ol class="schedule-list">
+              <li class="schedule-item">
+                <time datetime="2026-11-18T08:30" class="schedule-time">08:30 - 09:30</time>
+                <div class="schedule-details">
+                  <h4 class="schedule-activity">Acreditación e Inauguración Institucional</h4>
+                  <p class="schedule-location">📍 Auditorio Mayor &amp; Sala Virtual Alfa</p>
+                </div>
+              </li>
+              <li class="schedule-item">
+                <time datetime="2026-11-18T09:30" class="schedule-time">09:30 - 11:30</time>
+                <div class="schedule-details">
+                  <h4 class="schedule-activity">Conferencia Magistral: Avances en Células Solares Tándem y Nuevos Materiales</h4>
+                  <p class="schedule-speaker">A cargo de: Dra. Elena Morales (Instituto Solar de Friburgo)</p>
+                  <p class="schedule-location">📍 Auditorio Mayor</p>
+                </div>
+              </li>
+              <li class="schedule-item">
+                <time datetime="2026-11-18T14:00" class="schedule-time">14:00 - 17:00</time>
+                <div class="schedule-details">
+                  <h4 class="schedule-activity">Taller Práctico: Modelado y Simulación de Parques Solares y Eólicos</h4>
+                  <p class="schedule-speaker">Cupo limitado (40 participantes) • Laboratorio de Simulación Energética</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <!-- Día 2 -->
+          <div class="schedule-day-block">
+            <div class="day-header">
+              <span class="day-badge">Día 2</span>
+              <h3 class="day-title">Jueves 19 de Noviembre: Hidrógeno Verde, Baterías y Smart Grids</h3>
+            </div>
+            <ol class="schedule-list">
+              <li class="schedule-item">
+                <time datetime="2026-11-19T09:00" class="schedule-time">09:00 - 11:00</time>
+                <div class="schedule-details">
+                  <h4 class="schedule-activity">Conferencia Magistral: Electrólisis PEM y Vectores Energéticos de Hidrógeno</h4>
+                  <p class="schedule-speaker">A cargo de: Dr. Marcos Chen (Kyoto Lab)</p>
+                  <p class="schedule-location">📍 Auditorio Mayor</p>
+                </div>
+              </li>
+              <li class="schedule-item">
+                <time datetime="2026-11-19T11:30" class="schedule-time">11:30 - 13:00</time>
+                <div class="schedule-details">
+                  <h4 class="schedule-activity">Panel de Expertos: Integración de Redes Inteligentes y Electromovilidad V2G</h4>
+                  <p class="schedule-speaker">Modera: Dra. Valeria Duarte</p>
+                  <p class="schedule-location">📍 Sala Magna Virtual</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <!-- Día 3 -->
+          <div class="schedule-day-block">
+            <div class="day-header">
+              <span class="day-badge">Día 3</span>
+              <h3 class="day-title">Viernes 20 de Noviembre: Economía Circular, Políticas de Descarbonización y Clausura</h3>
+            </div>
+            <ol class="schedule-list">
+              <li class="schedule-item">
+                <time datetime="2026-11-20T09:30" class="schedule-time">09:30 - 11:30</time>
+                <div class="schedule-details">
+                  <h4 class="schedule-activity">Mesa Redonda: Financiación Climática, Taxonomía Verde y Economía Circular</h4>
+                  <p class="schedule-speaker">Panel de expertos presidido por M.Sc. Carlos Mendoza</p>
+                  <p class="schedule-location">📍 Auditorio Mayor</p>
+                </div>
+              </li>
+              <li class="schedule-item">
+                <time datetime="2026-11-20T12:00" class="schedule-time">12:00 - 13:30</time>
+                <div class="schedule-details">
+                  <h4 class="schedule-activity">Ceremonia de Clausura y Entrega de Distinciones a Investigaciones Sostenibles</h4>
+                  <p class="schedule-location">📍 Auditorio Mayor &amp; Transmisión Oficial</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección 4: Formulario de Inscripción Accesible (Interacción JS 2 & 3) -->
+    <section class="section register-section" id="registro" aria-labelledby="register-heading">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-sub">Formulario Oficial</span>
+          <h2 id="register-heading" class="section-title">Inscripción y Solicitud de Certificado</h2>
+          <p class="section-description">
+            Complete sus datos para registrar su participación. Todos los campos marcados con un asterisco (<span class="required" aria-hidden="true">*</span>) son obligatorios.
+          </p>
+        </header>
+
+        <div class="register-card">
+          <!-- Caja de alertas accesible para anuncios de error -->
+          <div id="form-alert-box" class="form-alert-box sr-only" role="alert" aria-live="assertive" tabindex="-1"></div>
+
+          <form id="registration-form" class="registration-form" novalidate>
+            
+            <div class="form-grid">
+              <!-- Campo: Nombre y Apellidos -->
+              <div class="form-group" id="group-fullname">
+                <label for="fullname" class="form-label">
+                  Nombre y Apellidos <span class="required" aria-hidden="true">*</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="fullname" 
+                  name="fullname" 
+                  class="form-control" 
+                  placeholder="Ej. María Elena Delgado"
+                  autocomplete="name" 
+                  required 
+                  aria-required="true"
+                  aria-describedby="fullname-hint fullname-error"
+                >
+                <span id="fullname-hint" class="form-hint">Escriba su nombre tal como desea que aparezca en el certificado.</span>
+                <span id="fullname-error" class="form-error" aria-live="polite"></span>
+              </div>
+
+              <!-- Campo: Correo Electrónico Institucional -->
+              <div class="form-group" id="group-email">
+                <label for="email" class="form-label">
+                  Correo Electrónico Institucional o Personal <span class="required" aria-hidden="true">*</span>
+                </label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  class="form-control" 
+                  placeholder="usuario@universidad.edu.ec"
+                  autocomplete="email" 
+                  required 
+                  aria-required="true"
+                  aria-describedby="email-hint email-error"
+                >
+                <span id="email-hint" class="form-hint">Enviaremos su credencial de acceso y enlace de streaming a esta dirección.</span>
+                <span id="email-error" class="form-error" aria-live="polite"></span>
+              </div>
+
+              <!-- Campo: Rol Académico -->
+              <div class="form-group" id="group-role">
+                <label for="role" class="form-label">
+                  Rol Académico o Profesional <span class="required" aria-hidden="true">*</span>
+                </label>
+                <select 
+                  id="role" 
+                  name="role" 
+                  class="form-select" 
+                  required 
+                  aria-required="true"
+                  aria-describedby="role-error"
+                >
+                  <option value="">-- Seleccione su ocupación o nivel --</option>
+                  <option value="estudiante-pregrado">Estudiante Universitario de Pregrado</option>
+                  <option value="estudiante-posgrado">Estudiante de Posgrado / Maestría / Doctorado</option>
+                  <option value="docente-investigador">Docente o Investigador Universitario</option>
+                  <option value="profesional">Profesional del Sector Tecnológico / Industria</option>
+                  <option value="publico-general">Público General Interesado</option>
+                </select>
+                <span id="role-error" class="form-error" aria-live="polite"></span>
+              </div>
+
+              <!-- Campo: Eje Temático de Preferencia -->
+              <div class="form-group" id="group-track">
+                <label for="preferred-track" class="form-label">
+                  Eje Temático de Mayor Interés <span class="required" aria-hidden="true">*</span>
+                </label>
+                <select 
+                  id="preferred-track" 
+                  name="preferredTrack" 
+                  class="form-select" 
+                  required 
+                  aria-required="true"
+                  aria-describedby="track-error"
+                >
+                  <option value="">-- Seleccione un eje prioritario --</option>
+                  <option value="solar">Energía Solar Fotovoltaica y Eólica Avanzada</option>
+                  <option value="hidrogeno">Hidrógeno Verde y Almacenamiento Energético</option>
+                  <option value="movilidad">Ciudades Inteligentes y Movilidad Eléctrica</option>
+                  <option value="circular">Economía Circular y Gestión de Recursos</option>
+                </select>
+                <span id="track-error" class="form-error" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <!-- Modalidad de Asistencia (Fieldset con Radio buttons accesibles) -->
+            <fieldset class="form-fieldset" id="group-modality" aria-describedby="modality-error">
+              <legend class="form-legend">
+                Modalidad de Asistencia Deseada <span class="required" aria-hidden="true">*</span>
+              </legend>
+              <div class="radio-options">
+                <label class="radio-label">
+                  <input type="radio" name="modality" value="presencial" class="form-radio" required>
+                  <span class="radio-custom"></span>
+                  <span class="radio-text">
+                    <strong>Presencial (Campus Central)</strong>
+                    <small>Incluye acceso a auditorios, material impreso y catering de bienvenida.</small>
+                  </span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="modality" value="virtual" class="form-radio" required>
+                  <span class="radio-custom"></span>
+                  <span class="radio-text">
+                    <strong>Virtual (Transmisión Interactiva)</strong>
+                    <small>Acceso a salas en vivo, foros de preguntas y grabaciones en alta definición.</small>
+                  </span>
+                </label>
+              </div>
+              <span id="modality-error" class="form-error" aria-live="polite"></span>
+            </fieldset>
+
+            <!-- Requerimientos especiales / Accesibilidad -->
+            <div class="form-group" id="group-notes">
+              <label for="accessibility-needs" class="form-label">
+                Requerimientos de accesibilidad o comentarios (Opcional)
+              </label>
+              <textarea 
+                id="accessibility-needs" 
+                name="accessibilityNeeds" 
+                class="form-textarea" 
+                rows="3" 
+                placeholder="Por favor detalle si requiere subtitulado en vivo, interpretación en lengua de señas, acceso preferente para silla de ruedas o material en formato accesible..."
+                aria-describedby="notes-hint"
+              ></textarea>
+              <span id="notes-hint" class="form-hint">Nos comprometemos a garantizar una experiencia inclusiva para todos los asistentes.</span>
+            </div>
+
+            <!-- Casilla de Términos y Consentimiento -->
+            <div class="form-group checkbox-group" id="group-terms">
+              <label class="checkbox-label" for="terms-check">
+                <input 
+                  type="checkbox" 
+                  id="terms-check" 
+                  name="terms" 
+                  class="form-checkbox" 
+                  required 
+                  aria-required="true"
+                  aria-describedby="terms-error"
+                >
+                <span class="checkbox-custom"></span>
+                <span class="checkbox-text">
+                  Confirmo que los datos proporcionados son correctos y acepto el código de conducta académica del evento y la política de tratamiento de datos personales para la emisión del certificado oficial. <span class="required" aria-hidden="true">*</span>
+                </span>
+              </label>
+              <span id="terms-error" class="form-error" aria-live="polite"></span>
+            </div>
+
+            <!-- Botón de Envío -->
+            <div class="form-actions">
+              <button type="submit" id="submit-btn" class="btn btn-primary btn-submit">
+                <span class="btn-text">Confirmar mi Inscripción</span>
+                <span class="btn-spinner" aria-hidden="true"></span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección 5: Preguntas Frecuentes (FAQ Acordeón Accesible) -->
+    <section class="section faq-section" id="faq" aria-labelledby="faq-heading">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-sub">Resolución de Dudas</span>
+          <h2 id="faq-heading" class="section-title">Preguntas Frecuentes</h2>
+          <p class="section-description">
+            Encuentre respuestas rápidas sobre certificados, modalidades y requisitos de participación.
+          </p>
+        </header>
+
+        <div class="accordion" id="faq-accordion">
+          <!-- Pregunta 1 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button type="button" class="accordion-btn" id="faq-btn-1" aria-expanded="false" aria-controls="faq-panel-1">
+                <span class="accordion-title">¿La inscripción al congreso tiene algún costo?</span>
+                <span class="accordion-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div id="faq-panel-1" class="accordion-panel" role="region" aria-labelledby="faq-btn-1" hidden>
+              <div class="accordion-content">
+                <p>
+                  No. Como parte de una iniciativa académica de democratización del conocimiento científico, la asistencia tanto presencial como virtual es <strong>100% gratuita</strong>, financiada por fondos de investigación y patrocinadores universitarios.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pregunta 2 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button type="button" class="accordion-btn" id="faq-btn-2" aria-expanded="false" aria-controls="faq-panel-2">
+                <span class="accordion-title">¿Cómo y cuándo se entrega el certificado de 40 horas?</span>
+                <span class="accordion-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div id="faq-panel-2" class="accordion-panel" role="region" aria-labelledby="faq-btn-2" hidden>
+              <div class="accordion-content">
+                <p>
+                  Para obtener el certificado oficial con código de verificación QR y firma digital, se requiere una asistencia mínima del 80% a las sesiones programadas. El documento se emitirá en formato PDF descargable en los 5 días posteriores a la culminación del congreso.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pregunta 3 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button type="button" class="accordion-btn" id="faq-btn-3" aria-expanded="false" aria-controls="faq-panel-3">
+                <span class="accordion-title">¿Se grabarán las conferencias para verlas en diferido?</span>
+                <span class="accordion-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div id="faq-panel-3" class="accordion-panel" role="region" aria-labelledby="faq-btn-3" hidden>
+              <div class="accordion-content">
+                <p>
+                  Sí. Todos los participantes registrados recibirán un enlace exclusivo a la videoteca académica donde estarán disponibles las grabaciones y diapositivas de cada ponente durante 6 meses.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pregunta 4 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button type="button" class="accordion-btn" id="faq-btn-4" aria-expanded="false" aria-controls="faq-panel-4">
+                <span class="accordion-title">¿Cuáles son los requisitos técnicos para los talleres prácticos?</span>
+                <span class="accordion-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div id="faq-panel-4" class="accordion-panel" role="region" aria-labelledby="faq-btn-4" hidden>
+              <div class="accordion-content">
+                <p>
+                  Para los talleres de modelado de parques solares y simulación de balance energético se recomienda contar con una computadora portátil con navegador actualizado y acceso a herramientas de simulación basadas en la nube. En el campus se proveerá acceso a red Wi-Fi de alta velocidad para todos los matriculados.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal Accesible de Confirmación de Registro (Interacción JS) -->
+  <div id="confirmation-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-message" hidden>
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-badge-success" aria-hidden="true">✓</div>
+        <h3 id="modal-title" class="modal-title">¡Inscripción Confirmada con Éxito!</h3>
+      </div>
+      <div class="modal-body">
+        <p id="modal-message" class="modal-message">
+          Estimado/a <strong id="modal-attendee-name">Participante</strong>, su registro en el <strong>CIER 2026</strong> ha sido procesado satisfactoriamente.
+        </p>
+        <div class="modal-ticket" aria-label="Credencial de registro">
+          <div class="ticket-row">
+            <span class="ticket-label">Código de Reserva:</span>
+            <span class="ticket-value" id="modal-ticket-code">CIER-2026-X892</span>
+          </div>
+          <div class="ticket-row">
+            <span class="ticket-label">Modalidad:</span>
+            <span class="ticket-value" id="modal-ticket-modality">Presencial</span>
+          </div>
+          <div class="ticket-row">
+            <span class="ticket-label">Correo Registrado:</span>
+            <span class="ticket-value" id="modal-ticket-email">usuario@correo.com</span>
+          </div>
+        </div>
+        <p class="modal-instructions">
+          Hemos enviado a su bandeja de entrada el comprobante con el código QR para el acceso. Por favor revise también su carpeta de spam o correo no deseado.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="modal-close-btn" class="btn btn-primary btn-block">
+          Entendido y Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Script con funcionalidad Vanilla JavaScript pura -->
+  <script src="js/main.js"></script>
+</body>
+</html>

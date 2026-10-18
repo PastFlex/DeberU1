@@ -1,0 +1,1597 @@
+/* ==========================================================================
+   CIATE 2026 - Hoja de Estilos Principal
+   Enfoque: Mobile First
+   Tecnología: CSS3 Puro con Variables, Flexbox, Grid y Media Queries Justificadas
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. VARIABLES CSS (Custom Properties)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Paleta cromática accesible con alto contraste (WCAG AA/AAA) */
+  --color-bg: #090d16;
+  --color-surface: #111827;
+  --color-surface-card: #162032;
+  --color-surface-hover: #1e293b;
+  --color-border: #293548;
+  --color-border-focus: #38bdf8;
+
+  /* Colores primarios y de acento */
+  --color-primary: #4f46e5;
+  --color-primary-hover: #4338ca;
+  --color-primary-light: #818cf8;
+  --color-accent: #06b6d4;
+  --color-accent-light: #38bdf8;
+  --color-emerald: #10b981;
+  --color-amber: #f59e0b;
+
+  /* Estados de validación */
+  --color-error: #ef4444;
+  --color-error-bg: #450a0a;
+  --color-error-border: #f87171;
+  --color-success: #10b981;
+  --color-success-bg: #064e3b;
+
+  /* Tipografía y textos de alto contraste */
+  --color-text-main: #f8fafc;
+  --color-text-muted: #cbd5e1;
+  --color-text-dim: #94a3b8;
+
+  /* Tipografías */
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Espaciados modulares */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4.5rem;
+
+  /* Bordes redondeados y sombras */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px 0 rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 12px 28px -4px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 24px -2px rgba(6, 182, 212, 0.35);
+
+  /* Transición fluida */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET Y ESTILOS BASE (Mobile-First)
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text-main);
+  background-color: var(--color-bg);
+  background-image: 
+    radial-gradient(circle at 10% 10%, rgba(79, 70, 229, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.06) 0%, transparent 45%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Imágenes Fluidas Requeridas */
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--color-accent-light);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: #7dd3fc;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  color: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   3. ACCESIBILIDAD Y FOCO VISIBLE (Requerimiento Estricto)
+   -------------------------------------------------------------------------- */
+/* Enlace accesible para saltar navegación */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  padding: 0.75rem 1.25rem;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  z-index: 9999;
+  text-decoration: none;
+  transition: top 0.2s ease-in-out;
+}
+
+.skip-link:focus {
+  top: 1rem;
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Indicador de foco visible en cualquier elemento interactivo */
+:focus-visible {
+  outline: 3px solid var(--color-accent-light);
+  outline-offset: 3px;
+}
+
+/* Clases de utilidad para lectores de pantalla */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. LAYOUT GENERAL Y CONTENEDORES
+   -------------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.section {
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: var(--space-2xl);
+}
+
+.section-sub {
+  display: inline-block;
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  background-color: rgba(6, 182, 212, 0.1);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.75rem;
+  border: 1px solid rgba(6, 182, 212, 0.25);
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 1.85rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--color-text-main);
+  margin-bottom: 0.75rem;
+}
+
+.section-description {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* Botones Accesibles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: center;
+  min-height: 48px; /* Tamaño táctil mínimo accesible */
+  min-width: 48px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary), #6366f1);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.4);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #4338ca, var(--color-primary));
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.5);
+}
+
+.btn-secondary {
+  background-color: var(--color-surface-card);
+  color: var(--color-text-main);
+  border-color: var(--color-border);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-surface-hover);
+  border-color: var(--color-accent);
+  color: var(--color-accent-light);
+  transform: translateY(-2px);
+}
+
+.btn-lg {
+  padding: 0.9rem 1.8rem;
+  font-size: 1.05rem;
+  border-radius: var(--radius-lg);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* --------------------------------------------------------------------------
+   5. CABECERA Y NAVEGACIÓN MÓVIL (Mobile First)
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(9, 13, 22, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color var(--transition-normal);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4.5rem;
+  position: relative;
+  width: 100%;
+}
+
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--color-text-main);
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+.brand-logo {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+}
+
+.brand-text {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.brand-year {
+  color: var(--color-accent);
+}
+
+/* Botón Hamburguesa Accesible */
+.menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  z-index: 1100;
+  color: var(--color-text-main);
+  flex-shrink: 0;
+}
+
+.menu-toggle:hover {
+  background-color: var(--color-surface-hover);
+  border-color: var(--color-accent);
+}
+
+.menu-icon,
+.menu-icon::before,
+.menu-icon::after {
+  display: block;
+  width: 22px;
+  height: 2.5px;
+  background-color: currentColor;
+  border-radius: 2px;
+  transition: transform var(--transition-normal), opacity var(--transition-normal);
+}
+
+.menu-icon {
+  position: relative;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.menu-icon::before {
+  top: -7px;
+}
+
+.menu-icon::after {
+  bottom: -7px;
+}
+
+/* Estado de Menú Abierto (Animación cruz accesible) */
+.menu-toggle[aria-expanded="true"] .menu-icon {
+  background-color: transparent;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-icon::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-icon::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+/* Menú Desplegable en Móvil (Mobile First) */
+.main-nav {
+  position: fixed;
+  top: 4.5rem;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: calc(100vh - 4.5rem);
+  background-color: rgba(9, 13, 22, 0.98);
+  padding: var(--space-xl) var(--space-lg);
+  overflow-y: auto;
+  display: none;
+  border-top: 1px solid var(--color-border);
+}
+
+.main-nav.is-open {
+  display: block;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.nav-link {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem 0;
+  transition: color var(--transition-fast);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-accent-light);
+}
+
+.nav-btn {
+  margin-top: 0.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   6. SECCIÓN HERO (Mobile First)
+   -------------------------------------------------------------------------- */
+.hero-section {
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
+  position: relative;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #38bdf8;
+  background-color: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1.25rem;
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #38bdf8;
+  border-radius: 50%;
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.3); }
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.45rem, 5vw, 2.15rem);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+  overflow-wrap: break-word;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.75rem;
+  line-height: 1.7;
+}
+
+.hero-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: 1.25rem;
+  border-radius: var(--radius-lg);
+}
+
+.detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.detail-icon {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.detail-item strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--color-text-main);
+}
+
+.detail-item p {
+  font-size: 0.85rem;
+  color: var(--color-text-dim);
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2.25rem;
+}
+
+.hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 1.75rem;
+}
+
+.metric-card {
+  text-align: center;
+}
+
+.metric-number {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-accent-light);
+}
+
+.metric-label {
+  font-size: 0.75rem;
+  color: var(--color-text-dim);
+  line-height: 1.3;
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-figure {
+  width: 100%;
+  max-width: 540px;
+}
+
+.hero-image {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.hero-caption {
+  font-size: 0.8rem;
+  color: var(--color-text-dim);
+  text-align: center;
+  margin-top: 0.75rem;
+  font-style: italic;
+}
+
+/* --------------------------------------------------------------------------
+   7. SECCIÓN 1: EJES TEMÁTICOS (Cards con Flexbox/Grid)
+   -------------------------------------------------------------------------- */
+.tracks-section {
+  background-color: rgba(17, 24, 39, 0.6);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.tracks-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.track-card {
+  background-color: var(--color-surface-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+}
+
+.track-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary-light);
+  box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.25);
+}
+
+.track-icon-wrapper {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background-color: rgba(79, 70, 229, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  border: 1px solid rgba(79, 70, 229, 0.3);
+}
+
+.track-icon {
+  font-size: 1.6rem;
+}
+
+.track-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin-bottom: 0.75rem;
+  line-height: 1.35;
+}
+
+.track-text {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.track-topics {
+  border-top: 1px solid var(--color-border);
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.track-topics li {
+  font-size: 0.85rem;
+  color: var(--color-text-dim);
+  position: relative;
+  padding-left: 1.15rem;
+}
+
+.track-topics li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+}
+
+/* --------------------------------------------------------------------------
+   8. SECCIÓN 2: PONENTES Y FILTRO INTERACTIVO (JS Interacción #1)
+   -------------------------------------------------------------------------- */
+.filter-wrapper {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.filter-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-dim);
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.filter-btn {
+  background-color: var(--color-surface-card);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  min-height: 40px;
+}
+
+.filter-btn:hover {
+  background-color: var(--color-surface-hover);
+  color: var(--color-text-main);
+  border-color: var(--color-accent);
+}
+
+.filter-btn.active {
+  background: linear-gradient(135deg, var(--color-primary), #6366f1);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.4);
+}
+
+.speakers-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+}
+
+.speaker-card {
+  background-color: var(--color-surface-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.speaker-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+}
+
+.speaker-card.is-hidden {
+  display: none;
+}
+
+.speaker-figure {
+  position: relative;
+  background-color: #0b1120;
+  overflow: hidden;
+}
+
+.speaker-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.speaker-card:hover .speaker-photo {
+  transform: scale(1.03);
+}
+
+.speaker-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: var(--shadow-sm);
+}
+
+.badge-ia,
+.badge-solar {
+  background-color: rgba(79, 70, 229, 0.9);
+  color: #ffffff;
+}
+
+.badge-robotica,
+.badge-hidrogeno {
+  background-color: rgba(2, 132, 199, 0.9);
+  color: #ffffff;
+}
+
+.badge-seguridad,
+.badge-movilidad {
+  background-color: rgba(13, 148, 136, 0.9);
+  color: #ffffff;
+}
+
+.badge-etica,
+.badge-circular {
+  background-color: rgba(217, 119, 6, 0.9);
+  color: #ffffff;
+}
+
+.speaker-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.speaker-name {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+  margin-bottom: 0.25rem;
+}
+
+.speaker-institution {
+  font-size: 0.85rem;
+  color: var(--color-accent-light);
+  font-weight: 600;
+  margin-bottom: 0.85rem;
+}
+
+.speaker-topic {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.speaker-topic em {
+  font-style: normal;
+  color: var(--color-text-main);
+}
+
+.speaker-bio {
+  font-size: 0.85rem;
+  color: var(--color-text-dim);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   9. SECCIÓN 3: CRONOGRAMA DE ACTIVIDADES
+   -------------------------------------------------------------------------- */
+.schedule-section {
+  background-color: rgba(17, 24, 39, 0.6);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.schedule-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.schedule-day-block {
+  background-color: var(--color-surface-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+}
+
+.day-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.day-badge {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.day-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+
+.schedule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.schedule-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-left: 1.25rem;
+  position: relative;
+  border-left: 2px solid var(--color-border);
+}
+
+.schedule-item::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+}
+
+.schedule-time {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-accent-light);
+}
+
+.schedule-activity {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin-bottom: 0.25rem;
+}
+
+.schedule-speaker {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.schedule-location {
+  font-size: 0.8rem;
+  color: var(--color-text-dim);
+  margin-top: 0.2rem;
+}
+
+/* --------------------------------------------------------------------------
+   10. SECCIÓN 4: FORMULARIO DE INSCRIPCIÓN ACCESIBLE (Interacción JS #2 y #3)
+   -------------------------------------------------------------------------- */
+.register-card {
+  background-color: var(--color-surface-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 1.75rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: var(--shadow-lg);
+}
+
+.form-alert-box {
+  background-color: var(--color-error-bg);
+  border: 1px solid var(--color-error-border);
+  color: #fecaca;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.form-alert-box strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: #ffffff;
+}
+
+.form-alert-box ul {
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-family: var(--font-heading);
+  font-size: 0.925rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin-bottom: 0.45rem;
+}
+
+.required {
+  color: var(--color-error);
+  margin-left: 0.2rem;
+  font-weight: bold;
+}
+
+.form-control,
+.form-select,
+.form-textarea {
+  width: 100%;
+  background-color: #0b1120;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-main);
+  padding: 0.75rem 1rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-control::placeholder,
+.form-textarea::placeholder {
+  color: #64748b;
+}
+
+.form-control:hover,
+.form-select:hover,
+.form-textarea:hover {
+  border-color: #475569;
+}
+
+.form-control:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--color-border-focus);
+  background-color: #0d1527;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+}
+
+/* Estado de Error Accesible */
+.form-control.is-invalid,
+.form-select.is-invalid,
+.form-textarea.is-invalid {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.25);
+}
+
+.form-hint {
+  font-size: 0.8rem;
+  color: var(--color-text-dim);
+  margin-top: 0.35rem;
+}
+
+.form-error {
+  display: none;
+  font-size: 0.825rem;
+  color: #fca5a5;
+  margin-top: 0.35rem;
+  font-weight: 600;
+}
+
+.form-error.is-visible {
+  display: block;
+}
+
+/* Fieldset de Modalidad */
+.form-fieldset {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  background-color: rgba(11, 17, 32, 0.5);
+}
+
+.form-legend {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  padding: 0 0.5rem;
+}
+
+.radio-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.radio-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.form-radio {
+  margin-top: 0.25rem;
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: var(--color-accent);
+}
+
+.radio-text strong {
+  display: block;
+  font-size: 0.925rem;
+  color: var(--color-text-main);
+}
+
+.radio-text small {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--color-text-dim);
+}
+
+/* Casilla de verificación accesible */
+.checkbox-group {
+  margin-top: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.form-checkbox {
+  margin-top: 0.25rem;
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.checkbox-text {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-submit {
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   11. SECCIÓN 5: ACORDEÓN PREGUNTAS FRECUENTES (Accesible)
+   -------------------------------------------------------------------------- */
+.accordion {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.accordion-item {
+  background-color: var(--color-surface-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.accordion-header {
+  margin: 0;
+}
+
+.accordion-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: transparent;
+  border: none;
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  cursor: pointer;
+  color: var(--color-text-main);
+  transition: background-color var(--transition-fast);
+}
+
+.accordion-btn:hover {
+  background-color: var(--color-surface-hover);
+}
+
+.accordion-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.accordion-icon {
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid var(--color-accent-light);
+  border-bottom: 2px solid var(--color-accent-light);
+  transform: rotate(45deg);
+  transition: transform var(--transition-normal);
+  flex-shrink: 0;
+}
+
+.accordion-btn[aria-expanded="true"] .accordion-icon {
+  transform: rotate(-135deg);
+}
+
+.accordion-panel {
+  padding: 0 1.5rem 1.25rem 1.5rem;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.accordion-panel[hidden] {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   12. MODAL ACCESIBLE DE CONFIRMACIÓN
+   -------------------------------------------------------------------------- */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(5, 8, 15, 0.85);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 1.25rem;
+}
+
+.modal-backdrop[hidden] {
+  display: none;
+}
+
+.modal-dialog {
+  background-color: var(--color-surface-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  max-width: 520px;
+  width: 100%;
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+  animation: modal-fade-in 0.3s ease-out;
+}
+
+@keyframes modal-fade-in {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.modal-header {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.modal-badge-success {
+  width: 56px;
+  height: 56px;
+  background-color: rgba(16, 185, 129, 0.15);
+  border: 2px solid var(--color-success);
+  color: var(--color-success);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin: 0 auto 1rem auto;
+}
+
+.modal-title {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+}
+
+.modal-body {
+  margin-bottom: 1.5rem;
+}
+
+.modal-message {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.modal-ticket {
+  background-color: #0b1120;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.ticket-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+.ticket-label {
+  color: var(--color-text-dim);
+}
+
+.ticket-value {
+  font-weight: 700;
+  color: var(--color-accent-light);
+}
+
+.modal-instructions {
+  font-size: 0.8rem;
+  color: var(--color-text-dim);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   13. PIE DE PÁGINA (Footer Semántico)
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background-color: #070a12;
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-2xl);
+  font-size: 0.9rem;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding-bottom: var(--space-2xl);
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.footer-brand-name {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+}
+
+.footer-text {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 0.85rem;
+}
+
+.footer-org {
+  color: var(--color-text-dim);
+  font-size: 0.85rem;
+}
+
+.footer-heading {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer-links a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--color-accent-light);
+  text-decoration: underline;
+}
+
+.footer-address p {
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.footer-address a {
+  color: var(--color-accent-light);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--color-border);
+  padding: 1.5rem 0;
+  background-color: #05070d;
+}
+
+.footer-bottom-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: center;
+  font-size: 0.825rem;
+  color: var(--color-text-dim);
+}
+
+/* ==========================================================================
+   14. ADAPTACIONES JUSTIFICADAS MEDIANTE MEDIA QUERIES (Requerimiento)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   ADAPTACIÓN 1: TABLET / PANTALLAS MEDIANAS (min-width: 768px)
+   Justificación:
+   - En pantallas medianas (tablets y dispositivos plegables a partir de 768px),
+     el ancho permite agrupar el contenido en dos columnas funcionales para
+     reducir el desplazamiento vertical excesivo.
+   - Las tarjetas de ejes temáticos y ponentes se distribuyen en una cuadrícula
+     de 2 columnas con CSS Grid.
+   - El formulario de registro aprovecha 2 columnas para campos de texto clave.
+   - Los botones del hero se alinean horizontalmente para una interacción rápida.
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 2.75rem;
+  }
+
+  .hero-actions {
+    flex-direction: row;
+  }
+
+  .hero-details {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  /* Grid a 2 columnas para Ejes Temáticos */
+  .tracks-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Grid a 2 columnas para Ponentes */
+  .speakers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Grid de 2 columnas para el formulario */
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .radio-options {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .btn-submit {
+    width: auto;
+  }
+
+  /* Footer en 2 columnas */
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-bottom-container {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   ADAPTACIÓN 2: ESCRITORIO / PANTALLAS GRANDES (min-width: 1024px)
+   Justificación:
+   - En monitores de escritorio (a partir de 1024px), se elimina el botón
+     hamburguesa y se muestra el menú de navegación completo en línea.
+   - La sección Hero se transforma en un layout simétrico de dos columnas:
+     información y métricas a la izquierda, e ilustración conceptual interactiva
+     a la derecha.
+   - Los 4 ejes temáticos y los 4 ponentes se expanden a 4 columnas completas
+     aprovechando el ancho visual sin comprimir la legibilidad.
+   - El pie de página se despliega a 4 columnas temáticas.
+   -------------------------------------------------------------------------- */
+@media (min-width: 1024px) {
+  .section {
+    padding-top: var(--space-3xl);
+    padding-bottom: var(--space-3xl);
+  }
+
+  .section-title {
+    font-size: 2.35rem;
+  }
+
+  /* Ocultar botón hamburguesa y mostrar menú horizontal en Desktop */
+  .menu-toggle {
+    display: none;
+  }
+
+  .main-nav {
+    display: block;
+    position: static;
+    width: auto;
+    height: auto;
+    background: transparent;
+    padding: 0;
+    transform: none;
+    visibility: visible;
+    border: none;
+    overflow-y: visible;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.75rem;
+  }
+
+  .nav-link {
+    font-size: 0.95rem;
+    padding: 0.25rem 0;
+  }
+
+  .nav-btn {
+    margin-top: 0;
+  }
+
+  /* Hero en dos columnas lado a lado */
+  .hero-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+
+  .hero-content {
+    flex: 1;
+    max-width: 600px;
+  }
+
+  .hero-visual {
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  .hero-title {
+    font-size: 3.25rem;
+  }
+
+  /* Grid a 4 columnas para Ejes Temáticos */
+  .tracks-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Grid a 4 columnas para Ponentes */
+  .speakers-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Footer desplegado a 4 columnas */
+  .footer-container {
+    grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
+  }
+}

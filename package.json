@@ -1,0 +1,12 @@
+{
+  "name": "deber-u3-ciate2026",
+  "version": "1.0.0",
+  "description": "Sitio web académico CIATE 2026 en HTML5, CSS3 y JavaScript",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": ["html5", "css3", "javascript", "academic-conference"],
+  "author": "Alex Palma",
+  "license": "MIT"
+}
